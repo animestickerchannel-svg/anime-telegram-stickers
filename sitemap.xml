@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://animestickerchannel-svg.github.io/anime-telegram-stickers/</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Telegram Sticker Channel -->
+  <url>
+    <loc>https://t.me/animestickerchannel</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Telegram Sticker Links -->
+  <url>
+    <loc>https://t.me/animestickerchannel/1373</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t.me/animestickerchannel/2144</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t.me/animestickerchannel/1858</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t.me/animestickerchannel/2041</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Themes -->
+  <url>
+    <loc>https://t.me/animestickerchannel/1905</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t.me/animestickerchannel/1890</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t.me/animestickerchannel/2081</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t.me/animestickerchannel/1918</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Premium Emojis -->
+  <url>
+    <loc>https://t.me/animestickerchannel/2247</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t.me/animestickerchannel/2235</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
