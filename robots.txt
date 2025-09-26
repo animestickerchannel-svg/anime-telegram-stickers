@@ -1,26 +1,3 @@
-# robots.txt for optimized indexing of repo/public pages
-
-# Apply rules to all crawlers
 User-agent: *
-
-# Block sensitive or irrelevant directories/files
-Disallow: /node_modules/
-Disallow: /vendor/
-Disallow: /tests/
-Disallow: /scripts/
-Disallow: /config/
-Disallow: /private/
-Disallow: /tmp/
-Disallow: /log/
-Disallow: /*.env$
-Disallow: /*.log$
-Disallow: /*.bak$
-Disallow: /*.sql$
-Disallow: /README.md
-Disallow: /LICENSE
-
-# Allow everything else
 Allow: /
-
-# Sitemap (replace with your actual sitemap URL)
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://animestickerchannel-svg.github.io/anime-telegram-stickers/sitemap.xml
