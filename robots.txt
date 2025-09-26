@@ -1,0 +1,16 @@
+# Allow all bots to crawl the entire site
+User-agent: *
+Disallow:
+
+# Block bots from accessing specific folders
+User-agent: *
+Disallow: /assets/
+Disallow: /scripts/
+
+# Allow all bots to access the "stickers" and "themes" sections
+User-agent: *
+Allow: /stickers/
+Allow: /themes/
+
+# Sitemap location
+Sitemap: https://animestickerchannel-svg.github.io/anime-telegram-stickers/sitemap.xml
