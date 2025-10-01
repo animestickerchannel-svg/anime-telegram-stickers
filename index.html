@@ -1,148 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anime Stickers & Themes | Official Channel</title>
-  <style>
-    body {font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9f9fb; color: #333;}
-    header {text-align: center; padding: 3rem 1rem 1rem; background: #111; color: white;}
-    header h1 {font-size: 3rem; margin: 0;}
-    header p {font-size: 1.3rem; margin-top: 1rem; max-width: 650px; margin-left:auto; margin-right:auto;}
-    header img {width:100%; max-height:400px; object-fit:cover; border-radius:15px; margin-top:20px;}
-    .btn {display:inline-block; margin-top:2rem; padding:1rem 2rem; font-size:1.2rem;
-          background:#0088cc; color:#fff; text-decoration:none; border-radius:12px; transition:0.3s;}
-    .btn:hover {background:#006699;}
-    section {padding:3rem 1rem; max-width:1100px; margin:auto; text-align:center;}
-    section h2 {font-size:2rem; margin-bottom:1.5rem;}
-    .gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem;}
-    .gallery img {width:100%; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;}
-    .gallery img:hover {transform:scale(1.05);}
-    .triple-row {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; margin-top:2rem;}
-    .triple-row div {background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center;}
-    .triple-row h3 {margin-bottom:1rem;}
-    .triple-row a {display:block; margin:0.5rem 0; text-decoration:none; color:#0088cc; font-weight:bold;}
-    footer {text-align:center; padding:1.5rem; background:#111; color:#eee; margin-top:3rem;}
-    footer a {color:#00aced; text-decoration:none;}
-    .gallery.themes {display:flex; gap:20px; justify-content:center; flex-wrap:nowrap;}
-    .gallery.themes img {width:300px; height:200px; object-fit:cover; border-radius:20px; box-shadow:0 4px 10px rgba(0,0,0,0.15);}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Sticker Channel | Under the Stars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0a0e27, #1a1f3a, #2d1b4e);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .stars-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        .star.small {
+            width: 1px;
+            height: 1px;
+        }
+
+        .star.medium {
+            width: 2px;
+            height: 2px;
+        }
+
+        .star.large {
+            width: 3px;
+            height: 3px;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .shooting-star {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #fff, transparent);
+            animation: shoot 3s linear infinite;
+        }
+
+        @keyframes shoot {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-300px) translateY(300px);
+                opacity: 0;
+            }
+        }
+
+        .moon {
+            position: fixed;
+            top: 5%;
+            right: 8%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%, #fef9e7, #f4e5c3);
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(254, 249, 231, 0.6),
+                        inset -10px -10px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            animation: moonGlow 4s infinite ease-in-out;
+        }
+
+        @keyframes moonGlow {
+            0%, 100% {
+                box-shadow: 0 0 60px rgba(254, 249, 231, 0.6),
+                            inset -10px -10px 20px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 100px rgba(254, 249, 231, 0.8),
+                            inset -10px -10px 20px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .clouds {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(100, 120, 180, 0.1);
+            border-radius: 100px;
+            animation: cloudFloat 30s infinite linear;
+            filter: blur(30px);
+        }
+
+        @keyframes cloudFloat {
+            0% {
+                transform: translateX(-100px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px));
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e8f0ff;
+            text-shadow: 0 0 10px rgba(232, 240, 255, 0.5);
+        }
+
+        .brand-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(138, 180, 248, 0.3);
+        }
+
+        .nav-btn:hover {
+            background: rgba(138, 180, 248, 0.3);
+            border-color: rgba(138, 180, 248, 0.5);
+            box-shadow: 0 0 30px rgba(138, 180, 248, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #8ab4f8, #c5a8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(138, 180, 248, 0.3);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: #b8c5e0;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.4rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.6);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin: 6rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(138, 180, 248, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(138, 180, 248, 0.3);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #e8f0ff;
+        }
+
+        .feature-card p {
+            color: #b8c5e0;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .constellation {
+            position: relative;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .constellation h2 {
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #ffffff, #8ab4f8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sticker-galaxy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticker-orb {
+            aspect-ratio: 1;
+            background: radial-gradient(circle at center, rgba(138, 180, 248, 0.2), rgba(102, 126, 234, 0.1));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(138, 180, 248, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(138, 180, 248, 0.2),
+                        inset 0 0 20px rgba(138, 180, 248, 0.1);
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        .sticker-orb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+
+        .sticker-orb:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 0 40px rgba(138, 180, 248, 0.6),
+                        inset 0 0 30px rgba(138, 180, 248, 0.2);
+            border-color: rgba(138, 180, 248, 0.6);
+        }
+
+        .cta-final {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .cta-final h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #8ab4f8, #c5a8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-final p {
+            font-size: 1.3rem;
+            color: #b8c5e0;
+            margin-bottom: 3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(138, 180, 248, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        footer p {
+            color: #b8c5e0;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .moon {
+                width: 80px;
+                height: 80px;
+                top: 3%;
+                right: 5%;
+            }
+
+            .features {
+                gap: 2rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="moon"></div>
+    <div class="clouds" id="cloudsContainer"></div>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>✨ Anime Stickers & Themes ✨</h1>
-    <p>Looking for the coolest anime-themed Telegram stickers? You’ve found the right place!  
-       Join for Themes, Stickers, and AMVs 😇</p>
-    <a href="https://t.me/animestickerchannel" target="_blank" rel="noopener noreferrer" class="btn">👉 Join Our Telegram</a>
-    <a href="https://t.me/animestickerchannel/1980" target="_blank" rel="noopener noreferrer">
-      <img src="https://i.ibb.co/8Dm1H7V6/Spy-x-family.jpg" alt="Spy x Family">
-    </a>
-  </header>
+    <div class="content">
+        <header>
+            <div class="brand">
+                <span class="brand-icon">🌙</span>
+                <span>Anime Stickers</span>
+            </div>
+            <a href="https://t.me/animestickerchannel" class="nav-btn" target="_blank" rel="noopener noreferrer">
+                Join Channel
+            </a>
+        </header>
 
-  <!-- Stickers Showcase -->
-  <section>
-    <h2>🔥 Featured Stickers</h2>
-    <div class="gallery">
-      <a href="https://t.me/animestickerchannel/1373" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/xtX8rhn8/pic1.jpg" alt="My Hero Academia">
-      </a>
-      <a href="https://t.me/animestickerchannel/2144" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/b5F91zhT/pic2.jpg" alt="Dandadan">
-      </a>
-      <a href="https://t.me/animestickerchannel/1858" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/TMHv6w23/pic3.jpg" alt="Anime Girl">
-      </a>
-      <a href="https://t.me/animestickerchannel/2041" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/wNKhqkWQ/photo-2025-09-26-19-23-06.jpg" alt="Frieren">
-      </a>
+        <section class="hero">
+            <h1>Stickers Under the Stars</h1>
+            <p>Journey through a galaxy of anime expressions. Thousands of premium stickers waiting to light up your conversations.</p>
+            <a href="https://t.me/animestickerchannel" class="cta-button" target="_blank" rel="noopener noreferrer">
+                <span>✨</span>
+                Start Your Journey
+            </a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <span class="feature-icon">⭐</span>
+                <h3>Stellar Quality</h3>
+                <p>Every sticker carefully curated and optimized for the best viewing experience across all devices</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🌠</span>
+                <h3>Endless Discovery</h3>
+                <p>New sticker collections added daily from the latest anime releases and beloved classics</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🌌</span>
+                <h3>Universe of Choice</h3>
+                <p>Browse through thousands of stickers from hundreds of anime series, all organized by genre</p>
+            </div>
+        </section>
+
+        <section class="constellation">
+            <h2>Explore Our Constellation</h2>
+            <div class="sticker-galaxy">
+                <div class="sticker-orb">
+ <a href="https://t.me/animestickerchannel/1373" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.ibb.co/xtX8rhn8/pic1.jpg" alt="Anime Sticker 1">
+</a>
+                </div>
+                <div class="sticker-orb">
+<a href="https://t.me/animestickerchannel/2144" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.ibb.co/b5F91zhT/pic2.jpg" alt="Anime Sticker 2">
+</a>
+                </div>
+                <div class="sticker-orb">
+<a href="https://t.me/animestickerchannel/1858" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.ibb.co/TMHv6w23/pic3.jpg" alt="Anime Sticker 3">
+</a>
+                </div>
+                <div class="sticker-orb">
+<a href="https://t.me/animestickerchannel/2041" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.ibb.co/wNKhqkWQ/photo-2025-09-26-19-23-06.jpg" alt="Anime Sticker 4">
+</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final">
+            <h2>Join the Community</h2>
+            <p>Connect with thousands of anime fans sharing their favorite moments</p>
+            <a href="https://t.me/animestickerchannel" class="cta-button" target="_blank" rel="noopener noreferrer">
+                <span>🚀</span>
+                Join on Telegram
+            </a>
+        </section>
     </div>
-    <a href="https://t.me/animestickerchannel" target="_blank" rel="noopener noreferrer" class="btn">📥 Get Stickers</a>
-  </section>
 
-  <!-- Themes Showcase -->
-  <section>
-    <h2>🎭 Featured Themes</h2>
-    <div class="gallery themes">
-      <a href="https://t.me/animestickerchannel/1905" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/xSkVGMTH/Screenshot-2025-09-26-192738.png" alt="Komi Can't Communicate">
-      </a>
-      <a href="https://t.me/animestickerchannel/1890" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/0p3DLyqj/Screenshot-2025-09-26-192908.png" alt="Gojo Jujutsu Kaisen">
-      </a>
-      <a href="https://t.me/animestickerchannel/2081" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/gM3fxSJr/Whats-App-Image-2025-09-26-at-19-42-01-60af8d08.jpg" alt="Theme 3">
-      </a>
-      <a href="https://t.me/animestickerchannel/1918" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/LXXpJpZg/Whats-App-Image-2025-09-26-at-19-42-01-4d341dc5.jpg" alt="Theme 4">
-      </a>
-    </div>
-    <a href="https://t.me/animestickerchannel" target="_blank" rel="noopener noreferrer" class="btn">📥 Get Themes</a>
-  </section>
+    <footer>
+        <p>&copy; 2025 Anime Sticker Channel • Where anime meets the cosmos 🌙✨</p>
+    </footer>
 
-  <!-- Premium Emojis -->
-  <section>
-    <h2>💎 Premium Emojis</h2>
-    <p>We also share exclusive <strong>Premium Telegram Emojis</strong> to make your chats even more expressive ✨</p>
-    <div class="gallery">
-      <a href="https://t.me/animestickerchannel/2247" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/7NSNrdt2/photo-2025-09-26-19-41-01.jpg" alt="Premium Emoji Pack 1">
-      </a>
-      <a href="https://t.me/animestickerchannel/2235" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/6cgYKCSg/photo-2025-09-26-19-40-52.jpg" alt="Premium Emoji Pack 2">
-      </a>
-    </div>
-    <a href="https://t.me/animestickerchannel" target="_blank" rel="noopener noreferrer" class="btn">💎 Explore Premium Emojis</a>
-  </section>
+    <script>
+        // Create starry night sky
+        const starsContainer = document.getElementById('starsContainer');
+        const starSizes = ['small', 'medium', 'large'];
+        
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = `star ${starSizes[Math.floor(Math.random() * starSizes.length)]}`;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (2 + Math.random() * 2) + 's';
+            starsContainer.appendChild(star);
+        }
 
-  <!-- About Section -->
-  <section>
-    <h2>🌸 About Us</h2>
-    <p>
-      We provide anime stickers, custom Telegram themes (Android & Desktop), and AMVs to make your chats more fun.  
-      Join our community and explore everything with our easy indexes.  
-    </p>
-    <p>
-      💬 Chat group: <a href="https://t.me/stickerwarr" target="_blank" rel="noopener noreferrer">@stickerwarr</a><br>
-      ⚡ Credits: All wallpapers, AMVs, songs, and edits belong to their respected owners.
-    </p>
-  </section>
+        // Create shooting stars
+        setInterval(() => {
+            const shootingStar = document.createElement('div');
+            shootingStar.className = 'shooting-star';
+            shootingStar.style.width = (50 + Math.random() * 100) + 'px';
+            shootingStar.style.top = Math.random() * 50 + '%';
+            shootingStar.style.right = '0';
+            starsContainer.appendChild(shootingStar);
 
-  <!-- Explore More -->
-  <section>
-    <h2>🗂️ Explore More</h2>
-    <div class="triple-row">
-      <div>
-        <h3>🔥 Stickers</h3>
-        <a href="https://t.me/animestickerchannel" target="_blank" rel="noopener noreferrer">Get Stickers</a>
-        <a href="https://t.me/animestickerchannelindex" target="_blank" rel="noopener noreferrer">Sticker Index</a>
-      </div>
-      <div>
-        <h3>🎭 Themes</h3>
-        <a href="https://t.me/animestickerchannel" target="_blank" rel="noopener noreferrer">Get Themes</a>
-        <a href="https://t.me/animethemeiindex" target="_blank" rel="noopener noreferrer">Theme Index</a>
-      </div>
-      <div>
-        <h3>🆕 New Index</h3>
-        <a href="https://t.me/animestickerchannel2/21" target="_blank" rel="noopener noreferrer">New Stickers</a>
-        <a href="https://t.me/animestickerchannel2/77" target="_blank" rel="noopener noreferrer">New Themes</a>
-      </div>
-    </div>
-  </section>
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 3000);
+        }, 4000);
 
-  <!-- Telegram Widget -->
-  <section>
-    <h2>📢 Latest from Our Channel</h2>
-    <script async src="https://telegram.org/js/telegram-widget.js?22"
-            data-telegram-post="animestickerchannel/1"
-            data-width="100%"></script>
-  </section>
+        // Create floating clouds
+        const cloudsContainer = document.getElementById('cloudsContainer');
+        for (let i = 0; i < 5; i++) {
+            const cloud = document.createElement('div');
+            cloud.className = 'cloud';
+            cloud.style.width = (100 + Math.random() * 200) + 'px';
+            cloud.style.height = (40 + Math.random() * 60) + 'px';
+            cloud.style.top = (Math.random() * 70) + '%';
+            cloud.style.left = (Math.random() * -200) + 'px';
+            cloud.style.animationDuration = (20 + Math.random() * 20) + 's';
+            cloud.style.animationDelay = (Math.random() * 10) + 's';
+            cloudsContainer.appendChild(cloud);
+        }
 
-  <!-- Footer -->
-  <footer>
-    <p>Made with ❤️ for anime fans | <a href="https://t.me/animestickerchannel" target="_blank" rel="noopener noreferrer">Join us on Telegram</a></p>
-  </footer>
+        // Parallax effect for cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.feature-card');
+            const x = e.clientX / window.innerWidth - 0.5;
+            const y = e.clientY / window.innerHeight - 0.5;
 
+            cards.forEach((card, index) => {
+                const speed = (index + 1) * 3;
+                card.style.transform = `perspective(1000px) rotateY(${x * speed}deg) rotateX(${-y * speed}deg)`;
+            });
+        });
+
+        // Reset card transform when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                card.style.transform = '';
+            });
+        });
+    </script>
 </body>
 </html>
