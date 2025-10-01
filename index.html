@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
             background: linear-gradient(to bottom, #0a0e27, #1a1f3a, #2d1b4e);
             color: #fff;
             overflow-x: hidden;
@@ -142,9 +142,10 @@
             align-items: center;
             gap: 1rem;
             font-size: 1.8rem;
-            font-weight: bold;
+            font-weight: 900;
             color: #e8f0ff;
             text-shadow: 0 0 10px rgba(232, 240, 255, 0.5);
+            letter-spacing: 0.5px;
         }
 
         .brand-icon {
@@ -196,6 +197,8 @@
             background-clip: text;
             text-shadow: 0 0 30px rgba(138, 180, 248, 0.3);
             line-height: 1.2;
+            font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .hero p {
@@ -280,6 +283,8 @@
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: #e8f0ff;
+            font-weight: 900;
+            letter-spacing: 0.5px;
         }
 
         .feature-card p {
@@ -301,6 +306,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .sticker-galaxy {
@@ -326,6 +333,15 @@
                         inset 0 0 20px rgba(138, 180, 248, 0.1);
             overflow: hidden;
             padding: 1rem;
+        }
+
+        .sticker-orb a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
         .sticker-orb img {
@@ -378,23 +394,130 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1.2rem 2.5rem;
             }
 
             .moon {
-                width: 80px;
-                height: 80px;
-                top: 3%;
-                right: 5%;
+                width: 60px;
+                height: 60px;
+                top: 2%;
+                right: 3%;
+            }
+
+            .brand {
+                font-size: 1.4rem;
+            }
+
+            .brand-icon {
+                font-size: 2rem;
             }
 
             .features {
                 gap: 2rem;
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 2rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .feature-card p {
+                font-size: 1rem;
+            }
+
+            .constellation h2 {
+                font-size: 2rem;
+            }
+
+            .sticker-galaxy {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .cta-final h2 {
+                font-size: 2.2rem;
+                padding: 0 1rem;
+            }
+
+            .cta-final p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
             }
 
             header {
                 flex-direction: column;
                 gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .constellation {
+                padding: 4rem 1rem;
+            }
+
+            .cta-final {
+                padding: 4rem 1rem;
+            }
+
+            footer p {
+                font-size: 0.95rem;
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                font-size: 0.95rem;
+                padding: 1rem 2rem;
+            }
+
+            .brand {
+                font-size: 1.2rem;
+            }
+
+            .feature-icon {
+                font-size: 3.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .sticker-galaxy {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .constellation h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-final h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -448,24 +571,24 @@
             <h2>Explore Our Constellation</h2>
             <div class="sticker-galaxy">
                 <div class="sticker-orb">
- <a href="https://t.me/animestickerchannel/1373" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/xtX8rhn8/pic1.jpg" alt="Anime Sticker 1">
-</a>
+                    <a href="https://t.me/animestickerchannel/1373" target="_blank" rel="noopener noreferrer">
+                        <img src="https://i.ibb.co/xtX8rhn8/pic1.jpg" alt="Anime Sticker 1">
+                    </a>
                 </div>
                 <div class="sticker-orb">
-<a href="https://t.me/animestickerchannel/2144" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/b5F91zhT/pic2.jpg" alt="Anime Sticker 2">
-</a>
+                    <a href="https://t.me/animestickerchannel/2144" target="_blank" rel="noopener noreferrer">
+                        <img src="https://i.ibb.co/b5F91zhT/pic2.jpg" alt="Anime Sticker 2">
+                    </a>
                 </div>
                 <div class="sticker-orb">
-<a href="https://t.me/animestickerchannel/1858" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/TMHv6w23/pic3.jpg" alt="Anime Sticker 3">
-</a>
+                    <a href="https://t.me/animestickerchannel/1858" target="_blank" rel="noopener noreferrer">
+                        <img src="https://i.ibb.co/TMHv6w23/pic3.jpg" alt="Anime Sticker 3">
+                    </a>
                 </div>
                 <div class="sticker-orb">
-<a href="https://t.me/animestickerchannel/2041" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/wNKhqkWQ/photo-2025-09-26-19-23-06.jpg" alt="Anime Sticker 4">
-</a>
+                    <a href="https://t.me/animestickerchannel/2041" target="_blank" rel="noopener noreferrer">
+                        <img src="https://i.ibb.co/wNKhqkWQ/photo-2025-09-26-19-23-06.jpg" alt="Anime Sticker 4">
+                    </a>
                 </div>
             </div>
         </section>
