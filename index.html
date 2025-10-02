@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Sticker Channel | Under the Stars</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Bubblegum+Sans&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -12,11 +14,15 @@
         }
 
         body {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
+            font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
             background: linear-gradient(to bottom, #0a0e27, #1a1f3a, #2d1b4e);
             color: #fff;
             overflow-x: hidden;
             position: relative;
+        }
+
+        .special-title {
+            font-family: 'Bubblegum Sans', cursive;
         }
 
         .stars-container {
@@ -130,18 +136,105 @@
             padding: 2rem;
         }
 
+        .index-dropdown {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .dropdown-toggle {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .dropdown-toggle:hover {
+            background: linear-gradient(135deg, rgba(126, 142, 245, 0.7), rgba(138, 91, 184, 0.7));
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: rgba(20, 25, 50, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(138, 180, 248, 0.3);
+            border-radius: 20px;
+            padding: 1rem;
+            min-width: 250px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dropdown-menu.show {
+            display: flex;
+        }
+
+        .dropdown-item {
+            color: #e8f0ff;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(138, 180, 248, 0.2);
+            transform: translateX(5px);
+        }
+
+        .dropdown-item span {
+            font-size: 1.2rem;
+        }
+
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
+            gap: 2rem;
             padding: 2rem 0;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
         }
 
         .brand {
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: #e8f0ff;
             text-shadow: 0 0 10px rgba(232, 240, 255, 0.5);
@@ -408,10 +501,10 @@
             }
 
             .moon {
-                width: 60px;
-                height: 60px;
-                top: 2%;
-                right: 3%;
+                width: 80px;
+                height: 80px;
+                top: 3%;
+                right: 5%;
             }
 
             .brand {
@@ -459,7 +552,6 @@
             }
 
             header {
-                flex-direction: column;
                 gap: 1.5rem;
             }
 
@@ -527,19 +619,54 @@
     <div class="moon"></div>
     <div class="clouds" id="cloudsContainer"></div>
 
+    <div class="index-dropdown">
+        <button class="dropdown-toggle" id="dropdownToggle">
+            📑 Indexes
+            <span class="dropdown-arrow">▼</span>
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="https://t.me/animestickerchannelindex" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                <span>🎴</span>
+                Sticker Index
+            </a>
+            <a href="https://t.me/animethemeiindex" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                <span>🎨</span>
+                Theme Index
+            </a>
+            <a href="https://t.me/animestickerchannel2/21" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                <span>✨</span>
+                New Sticker Index
+            </a>
+            <a href="https://t.me/animestickerchannel2/77" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                <span>🌟</span>
+                New Theme Index
+            </a>
+            <a href="https://t.me/stickerwarr" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                <span>💬</span>
+                Chat Group
+            </a>
+            <a href="https://t.me/animestickerchannel" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                <span>📱</span>
+                Join Channel
+            </a>
+        </div>
+    </div>
+
     <div class="content">
         <header>
             <div class="brand">
                 <span class="brand-icon">🌙</span>
-                <span>Anime Stickers</span>
             </div>
-            <a href="https://t.me/animestickerchannel" class="nav-btn" target="_blank" rel="noopener noreferrer">
-                Join Channel
-            </a>
+            <div class="header-right">
+                <span class="special-title" style="font-size: 2.5rem; font-weight: 900; color: #e8f0ff; text-shadow: 0 0 10px rgba(232, 240, 255, 0.5); letter-spacing: 0.5px;">Anime Stickers</span>
+                <a href="https://t.me/animestickerchannel" class="nav-btn" target="_blank" rel="noopener noreferrer">
+                    Join Channel
+                </a>
+            </div>
         </header>
 
         <section class="hero">
-            <h1>Stickers Under the Stars</h1>
+            <h1 class="special-title">Stickers Under the Stars</h1>
             <p>Journey through a galaxy of anime expressions. Thousands of premium stickers waiting to light up your conversations.</p>
             <a href="https://t.me/animestickerchannel" class="cta-button" target="_blank" rel="noopener noreferrer">
                 <span>✨</span>
@@ -608,6 +735,24 @@
     </footer>
 
     <script>
+        // Dropdown functionality
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const dropdownArrow = document.querySelector('.dropdown-arrow');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
+            dropdownArrow.classList.toggle('open');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.index-dropdown')) {
+                dropdownMenu.classList.remove('show');
+                dropdownArrow.classList.remove('open');
+            }
+        });
+
         // Create starry night sky
         const starsContainer = document.getElementById('starsContainer');
         const starSizes = ['small', 'medium', 'large'];
